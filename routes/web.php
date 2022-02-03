@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BannerimageController;
+use App\Http\Controllers\Admin\FeaturedController;
 use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Frontend\MainController as FrontendMainController;
@@ -47,6 +48,20 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/banner-update',[BannerController::class,'bannerUpdate'])->name('banner.update');
         Route::get('/banner-delete/{id}',[BannerController::class,'bannerDelete'])->name('banner.delete');
    });
+
+   //
+
+   //for-featured
+   Route::group(['prefix' => 'admin'], function() {
+    Route::get('/featured-index',[FeaturedController::class,'featuredIndex'])->name('featured.index');
+    Route::get('/featured-create',[FeaturedController::class,'featuredCreate'])->name('featured.create');
+    Route::post('/featured-store',[FeaturedController::class,'featuredStore'])->name('featured.store');
+    Route::get('/featured-edit/{id}',[FeaturedController::class,'featuredEdit'])->name('featured.edit');
+    Route::post('/featured-update',[FeaturedController::class,'featuredUpdate'])->name('featured.update');
+    Route::get('/featured-delete/{id}',[FeaturedController::class,'featuredDelete'])->name('featured.delete');
+});
+
+//
 
 
 //frontend
