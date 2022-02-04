@@ -8,19 +8,31 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Apdescription Form </h3>
+              <h3 class="card-title">Client Form </h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{route('apdescription.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('client.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="card-body">
                   <div class="mb-3">
-                      <label for="formFileMultiple" class="form-label">Apdescription Name</label>
-                      <input class="form-control" type="text" name="apdescription" id="formFileMultiple" multiple>
+                      <label for="formFileMultiple" class="form-label">Client Image</label>
+                      <input class="form-control" type="text" name="client_image" id="formFileMultiple" multiple>
                     </div>
-
               </div>
+              <div class="card-body">
+                  <div class="mb-3">
+                      <label for="formFileMultiple" class="form-label">Client Name</label>
+                      <input class="form-control" type="text" name="client_name" id="formFileMultiple" multiple>
+                    </div>
+              </div>
+              <div class="card-body">
+                  <div class="mb-3">
+                      <label for="formFileMultiple" class="form-label">Client Review</label>
+                      <input class="form-control" type="text" name="client_review" id="formFileMultiple" multiple>
+                    </div>
+              </div>
+
               <!-- /.card-body -->
 
               <div class="card-footer">

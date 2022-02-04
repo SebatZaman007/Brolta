@@ -127,6 +127,19 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/contact-delete/{id}',[ContactController::class,'contactDelete'])->name('contact.delete');
 });
 
+//
+
+//for client
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/client-index',[ContactController::class,'clientIndex'])->name('client.index');
+    Route::get('/client-create',[ContactController::class,'clientCreate'])->name('client.create');
+    Route::post('/client-store',[ContactController::class,'clientStore'])->name('client.store');
+    Route::get('/client-edit/{id}',[ContactController::class,'clientEdit'])->name('client.edit');
+    Route::post('/client-update',[ContactController::class,'clientUpdate'])->name('client.update');
+    Route::get('/client-delete/{id}',[ContactController::class,'clientDelete'])->name('client.delete');
+});
+
 
 
 //frontend
