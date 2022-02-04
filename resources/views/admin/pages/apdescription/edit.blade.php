@@ -8,17 +8,18 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">BannerImage Form </h3>
+              <h3 class="card-title">Apdescription Form </h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{route('bannerimage.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('apdescription.update')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="card-body">
                   <div class="mb-3">
-                      <label for="formFileMultiple" class="form-label">Banner Image</label>
-                      <input class="form-control" type="file" name="banner_image" id="formFileMultiple" multiple>
+                      <label for="formFileMultiple" class="form-label">Apdescription Name</label>
+                      <input class="form-control" type="text" name="apdescription" value="{{$edit->apdescription}}" id="formFileMultiple" multiple>
                     </div>
+
               </div>
               <!-- /.card-body -->
 

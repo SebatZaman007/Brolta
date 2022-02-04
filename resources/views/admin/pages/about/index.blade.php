@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Banner Table
+                <h5 class="card-header">About Table
                     <div style="text-align: right">
-                        <a class="btn btn-primary" href="{{route('featured.create')}}" role="button">Add new</a>
+                        <a class="btn btn-primary" href="{{route('about.create')}}" role="button">Add new</a>
                     </div>
                 </h5>
 
@@ -30,7 +30,11 @@
                         <table class="dataTableHover table table-striped table-bordered first">
                             <thead>
                             <tr>
-                                <th>{{ __('featured_discription')}}</th>
+
+                                <th>{{ __('about_image')}}</th>
+                                <th>{{ __('about_name')}}</th>
+                                <th>{{ __('about_description')}}</th>
+                                <th>{{ __('about_readmore')}}</th>
                                 <th>{{ __('action')}}</th>
                             </tr>
                             </thead>
@@ -96,14 +100,25 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('featured.index')}}",
+                url: "{{ route('about.index')}}",
             },
             columns: [
                 {
-                    data: 'featured_discription',
-                    name: 'featured_discription'
+                    data: 'about_image',
+                    name: 'about_image'
                 },
-
+                {
+                    data: 'about_name',
+                    name: 'about_name'
+                },
+                {
+                    data: 'about_description',
+                    name: 'about_description'
+                },
+                {
+                    data: 'about_readmore',
+                    name: 'about_readmore'
+                },
                 {
                     data: 'action',
                     name: 'action',

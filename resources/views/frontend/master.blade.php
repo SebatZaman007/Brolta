@@ -134,104 +134,40 @@
         <h2 class="">
           Featured Products
         </h2>
+        @foreach ($featured as $featureditem)
         <p class="col-lg-8 px-0">
-          If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+            {{$featureditem->featured_discription}}
         </p>
+        @endforeach
+
       </div>
       <div class="product_container">
         <div class="product_owl-carousel owl-carousel owl-theme ">
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
-                <img src="{{asset('frontend/images/p1.png')}}" alt="">
+            @foreach ($product as $productitem)
+            <div class="item">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{{asset(BlogImage().$productitem->product_image)}}" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h4>
+                      {{$productitem->product_name}}
+                    </h4>
+                    <h6 class="price">
+                      <span class="new_price">
+                       {{$productitem->product_newprise}}
+                      </span>
+                      <span class="old_price">
+                        {{$productitem->product_oldprise}}
+                      </span>
+                    </h6>
+                    <a href="{{$productitem->product_buy}}">
+                      Buy Now
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="detail-box">
-                <h4>
-                  Beard Oil
-                </h4>
-                <h6 class="price">
-                  <span class="new_price">
-                    40$
-                  </span>
-                  <span class="old_price">
-                    45$
-                  </span>
-                </h6>
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
-                <img src="{{asset('frontend/images/p2.png')}}" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Beard Oil
-                </h4>
-                <h6 class="price">
-                  <span class="new_price">
-                    40$
-                  </span>
-                  <span class="old_price">
-                    45$
-                  </span>
-                </h6>
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
-                <img src="{{asset('frontend/images/p3.png')}}" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Beard Oil
-                </h4>
-                <h6 class="price">
-                  <span class="new_price">
-                    40$
-                  </span>
-                  <span class="old_price">
-                    45$
-                  </span>
-                </h6>
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
-                <img src="{{asset('frontend/images/p4.png')}}" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Beard Oil
-                </h4>
-                <h6 class="price">
-                  <span class="new_price">
-                    40$
-                  </span>
-                  <span class="old_price">
-                    45$
-                  </span>
-                </h6>
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-            </div>
-          </div>
+            @endforeach
         </div>
       </div>
     </div>
@@ -243,28 +179,31 @@
 
   <section class="about_section ">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 px-0">
-          <div class="img-box ">
-            <img src="images/about-img.jpg" class="box_img" alt="about img">
-          </div>
-        </div>
-        <div class="col-md-5">
-          <div class="detail-box ">
-            <div class="heading_container">
-              <h2 class="">
-                About Us
-              </h2>
+        @foreach ($about as $aboutitem)
+        <div class="row">
+            <div class="col-md-6 px-0">
+              <div class="img-box ">
+                <img src="{{asset(BlogImage().$aboutitem->about_image)}}" class="box_img" alt="about img">
+              </div>
             </div>
-            <p class="detail_p_mt">
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
-            </p>
-            <a href="about.html" class="">
-              Read More
-            </a>
+            <div class="col-md-5">
+              <div class="detail-box ">
+                <div class="heading_container">
+                  <h2 class="">
+                    {{$aboutitem->about_name}}
+                  </h2>
+                </div>
+                <p class="detail_p_mt">
+                    {{$aboutitem->about_description}}
+                </p>
+                <a href="{{$aboutitem->about_readmore}}" class="">
+                  Read More
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        @endforeach
+
     </div>
   </section>
 
@@ -276,108 +215,45 @@
     <div class="container-fluid">
       <div class="heading_container heading_center ">
         <h2 class="">
-          New Arrivals
+         All Products
         </h2>
+        @foreach ($apdescription as $apdescriptionitem)
         <p class="col-lg-8 px-0">
-          If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-        </p>
+            {{$apdescriptionitem->apdescription}}
+          </p>
+        @endforeach
+
       </div>
       <div class="row">
-        <div class="col-sm-6 col-md-3">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p1.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Beard Oil
-              </h4>
-              <h6 class="price">
-                <span class="new_price">
-                  40$
-                </span>
-                <span class="old_price">
-                  45$
-                </span>
-              </h6>
-              <a href="">
-                Buy Now
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p2.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Beard Oil
-              </h4>
-              <h6 class="price">
-                <span class="new_price">
-                  40$
-                </span>
-                <span class="old_price">
-                  45$
-                </span>
-              </h6>
-              <a href="">
-                Buy Now
-              </a>
+          @foreach ($allproduct as $allproductitem)
+          <div class="col-sm-6 col-md-3">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{asset(BlogImage().$allproductitem->allproduct_image)}}" alt="">
+              </div>
+              <div class="detail-box">
+                <h4>
+                  {{$allproductitem->allproduct_name}}
+                </h4>
+                <h6 class="price">
+                  <span class="new_price">
+                    {{$allproductitem->allproduct_newprice}}
+                  </span>
+                  <span class="old_price">
+                    {{$allproductitem->allproduct_oldprice}}
+                  </span>
+                </h6>
+                <a href="{{$allproductitem->allproduct_seemore}}">
+                  Buy Now
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p3.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Beard Oil
-              </h4>
-              <h6 class="price">
-                <span class="new_price">
-                  40$
-                </span>
-                <span class="old_price">
-                  45$
-                </span>
-              </h6>
-              <a href="">
-                Buy Now
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p4.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Beard Oil
-              </h4>
-              <h6 class="price">
-                <span class="new_price">
-                  40$
-                </span>
-                <span class="old_price">
-                  45$
-                </span>
-              </h6>
-              <a href="">
-                Buy Now
-              </a>
-            </div>
-          </div>
-        </div>
+
+          @endforeach
       </div>
       <div class="btn-box">
-        <a href="">
+        <a href="{{$allproductitem->allproduct_seemore}}">
           See More
         </a>
       </div>
@@ -398,18 +274,19 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form action="">
+            <form action="{{route('contact.store')}}" method="POST">
+                @csrf
               <div>
-                <input type="text" placeholder="Your Name" />
+                <input type="text" name="contact_name" placeholder="Your Name" />
               </div>
               <div>
-                <input type="text" placeholder="Phone Number" />
+                <input type="text" name="contact_phonenumber" placeholder="Phone Number" />
               </div>
               <div>
-                <input type="email" placeholder="Your Email" />
+                <input type="email" name="contact_email" placeholder="Your Email" />
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <input type="text" name="contact_message" class="message-box" placeholder="Message" />
               </div>
               <div class="btn_box">
                 <button>
@@ -444,7 +321,7 @@
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/c1.jpg" alt="" class="img-1">
+                  <img src="{{asset('frontend/images/c1.jpg')}}" alt="" class="img-1">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -462,7 +339,7 @@
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/c2.jpg" alt="" class="img-1">
+                  <img src="{{asset('frontend/images/c2.jpg')}}" alt="" class="img-1">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -480,7 +357,7 @@
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/c1.jpg" alt="" class="img-1">
+                  <img src="{{asset('frontend/images/c1.jpg')}}" alt="" class="img-1">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -498,7 +375,7 @@
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/c2.jpg" alt="" class="img-1">
+                  <img src="{{asset('frontend/images/c2.jpg')}}" alt="" class="img-1">
                 </div>
                 <div class="detail-box">
                   <h5>

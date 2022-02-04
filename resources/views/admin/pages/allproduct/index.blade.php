@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Banner Table
+                <h5 class="card-header">Product Table
                     <div style="text-align: right">
-                        <a class="btn btn-primary" href="{{route('featured.create')}}" role="button">Add new</a>
+                        <a class="btn btn-primary" href="{{route('allproduct.create')}}" role="button">Add new</a>
                     </div>
                 </h5>
 
@@ -30,7 +30,12 @@
                         <table class="dataTableHover table table-striped table-bordered first">
                             <thead>
                             <tr>
-                                <th>{{ __('featured_discription')}}</th>
+
+                                <th>{{ __('allproduct_image')}}</th>
+                                <th>{{ __('allproduct_name')}}</th>
+                                <th>{{ __('allproduct_newprice')}}</th>
+                                <th>{{ __('allproduct_oldprice')}}</th>
+                                <th>{{ __('allproduct_seemore')}}</th>
                                 <th>{{ __('action')}}</th>
                             </tr>
                             </thead>
@@ -96,14 +101,29 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('featured.index')}}",
+                url: "{{ route('allproduct.index')}}",
             },
             columns: [
                 {
-                    data: 'featured_discription',
-                    name: 'featured_discription'
+                    data: 'allproduct_image',
+                    name: 'allproduct_image'
                 },
-
+                {
+                    data: 'allproduct_name',
+                    name: 'allproduct_name'
+                },
+                {
+                    data: 'allproduct_newprice',
+                    name: 'allproduct_newprice'
+                },
+                {
+                    data: 'allproduct_oldprice',
+                    name: 'allproduct_oldprice'
+                },
+                {
+                    data: 'allproduct_seemore',
+                    name: 'allproduct_seemore'
+                },
                 {
                     data: 'action',
                     name: 'action',

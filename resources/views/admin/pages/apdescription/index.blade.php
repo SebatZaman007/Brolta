@@ -21,7 +21,7 @@
             <div class="card">
                 <h5 class="card-header">Banner Table
                     <div style="text-align: right">
-                        <a class="btn btn-primary" href="{{route('featured.create')}}" role="button">Add new</a>
+                        <a class="btn btn-primary" href="{{route('apdescription.create')}}" role="button">Add new</a>
                     </div>
                 </h5>
 
@@ -30,7 +30,7 @@
                         <table class="dataTableHover table table-striped table-bordered first">
                             <thead>
                             <tr>
-                                <th>{{ __('featured_discription')}}</th>
+                                <th>{{ __('apdescription')}}</th>
                                 <th>{{ __('action')}}</th>
                             </tr>
                             </thead>
@@ -96,12 +96,12 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('featured.index')}}",
+                url: "{{ route('apdescription.index')}}",
             },
             columns: [
                 {
-                    data: 'featured_discription',
-                    name: 'featured_discription'
+                    data: 'apdescription',
+                    name: 'apdescription'
                 },
 
                 {

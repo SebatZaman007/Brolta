@@ -50,6 +50,48 @@
                   <p>Banner</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('featured.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Featured</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('featured.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Product</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('about.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>About</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('apdescription.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Apdescription</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('allproduct.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Allproduct</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('contact.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contact</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('client.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contact</p>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>

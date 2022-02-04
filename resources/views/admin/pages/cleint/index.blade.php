@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Banner Table
+                <h5 class="card-header">Contact Table
                     <div style="text-align: right">
-                        <a class="btn btn-primary" href="{{route('featured.create')}}" role="button">Add new</a>
+                        <a class="btn btn-primary" href="{{route('contact.create')}}" role="button">Add new</a>
                     </div>
                 </h5>
 
@@ -30,7 +30,10 @@
                         <table class="dataTableHover table table-striped table-bordered first">
                             <thead>
                             <tr>
-                                <th>{{ __('featured_discription')}}</th>
+                                <th>{{ __('contact_name')}}</th>
+                                <th>{{ __('contact_phonenumber')}}</th>
+                                <th>{{ __('contact_email')}}</th>
+                                <th>{{ __('contact_message')}}</th>
                                 <th>{{ __('action')}}</th>
                             </tr>
                             </thead>
@@ -96,14 +99,25 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('featured.index')}}",
+                url: "{{ route('contact.index')}}",
             },
             columns: [
                 {
-                    data: 'featured_discription',
-                    name: 'featured_discription'
+                    data: 'contact_name',
+                    name: 'contact_name'
                 },
-
+                {
+                    data: 'contact_phonenumber',
+                    name: 'contact_phonenumber'
+                },
+                {
+                    data: 'contact_email',
+                    name: 'contact_email'
+                },
+                {
+                    data: 'contact_message',
+                    name: 'contact_message'
+                },
                 {
                     data: 'action',
                     name: 'action',

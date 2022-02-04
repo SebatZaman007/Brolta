@@ -17,7 +17,7 @@
               <div class="card-body">
                   <div class="mb-3">
                       <label for="formFileMultiple" class="form-label">Banner Image</label>
-                      <input class="form-control" type="text" name="banner_image" id="formFileMultiple" multiple>
+                      <input class="form-control" type="file" name="banner_image" id="formFileMultiple" multiple>
                       <img src="{{asset(BlogImage().$edit->banner_image)}}" width="70px" height="70px" alt="img">
                     </div>
               </div>
