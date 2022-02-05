@@ -5,11 +5,15 @@ use App\Http\Controllers\Admin\AllproductController;
 use App\Http\Controllers\Admin\ApdescriptionController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BannerimageController;
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\ContactusController;
 use App\Http\Controllers\Admin\FeaturedController;
+use App\Http\Controllers\Admin\FooterleftController;
 use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SocialmediaController;
 use App\Http\Controllers\Frontend\MainController as FrontendMainController;
 use Illuminate\Support\Facades\Route;
 
@@ -132,13 +136,57 @@ Route::group(['prefix' => 'admin'], function() {
 //for client
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/client-index',[ContactController::class,'clientIndex'])->name('client.index');
-    Route::get('/client-create',[ContactController::class,'clientCreate'])->name('client.create');
-    Route::post('/client-store',[ContactController::class,'clientStore'])->name('client.store');
-    Route::get('/client-edit/{id}',[ContactController::class,'clientEdit'])->name('client.edit');
-    Route::post('/client-update',[ContactController::class,'clientUpdate'])->name('client.update');
-    Route::get('/client-delete/{id}',[ContactController::class,'clientDelete'])->name('client.delete');
+    Route::get('/client-index',[ClientController::class,'clientIndex'])->name('client.index');
+    Route::get('/client-create',[ClientController::class,'clientCreate'])->name('client.create');
+    Route::post('/client-store',[ClientController::class,'clientStore'])->name('client.store');
+    Route::get('/client-edit/{id}',[ClientController::class,'clientEdit'])->name('client.edit');
+    Route::post('/client-update',[ClientController::class,'clientUpdate'])->name('client.update');
+    Route::get('/client-delete/{id}',[ClientController::class,'clientDelete'])->name('client.delete');
 });
+
+//
+
+//for footerleft
+
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/footerleft-index',[FooterleftController::class,'footerleftIndex'])->name('footerleft.index');
+    Route::get('/footerleft-create',[FooterleftController::class,'footerleftCreate'])->name('footerleft.create');
+    Route::post('/footerleft-store',[FooterleftController::class,'footerleftStore'])->name('footerleft.store');
+    Route::get('/footerleft-edit/{id}',[FooterleftController::class,'footerleftEdit'])->name('footerleft.edit');
+    Route::post('/footerleft-update',[FooterleftController::class,'footerleftUpdate'])->name('footerleft.update');
+    Route::get('/footerleft-delete/{id}',[FooterleftController::class,'footerleftDelete'])->name('footerleft.delete');
+});
+
+//
+
+//forcontactus
+
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/contactus-index',[ContactusController::class,'contactusIndex'])->name('contactus.index');
+    Route::get('/contactus-create',[ContactusController::class,'contactusCreate'])->name('contactus.create');
+    Route::post('/contactus-store',[ContactusController::class,'contactusStore'])->name('contactus.store');
+    Route::get('/contactus-edit/{id}',[ContactusController::class,'contactusEdit'])->name('contactus.edit');
+    Route::post('/contactus-update',[ContactusController::class,'contactusUpdate'])->name('contactus.update');
+    Route::get('/contactus-delete/{id}',[ContactusController::class,'contactusDelete'])->name('contactus.delete');
+});
+
+//
+
+//forsocial media
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/socialmedia-index',[SocialmediaController::class,'socialmediaIndex'])->name('socialmedia.index');
+    Route::get('/socialmedia-create',[SocialmediaController::class,'socialmediaCreate'])->name('socialmedia.create');
+    Route::post('/socialmedia-store',[SocialmediaController::class,'socialmediaStore'])->name('socialmedia.store');
+    Route::get('/socialmedia-edit/{id}',[SocialmediaController::class,'socialmediaEdit'])->name('socialmedia.edit');
+    Route::post('/socialmedia-update',[SocialmediaController::class,'socialmediaUpdate'])->name('socialmedia.update');
+    Route::get('/socialmedia-delete/{id}',[SocialmediaController::class,'socialmediaDelete'])->name('socialmedia.delete');
+});
+
+
+
 
 
 

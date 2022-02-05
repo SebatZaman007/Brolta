@@ -6,18 +6,18 @@
 <body>
   <div class="hero_area">
     <div class="hero_bg_box">
-        @foreach ($bannerimage as $bannerimageitem)
-        <img src="{{asset(BlogImage().$bannerimageitem->banner_image)}}" alt="">
-        @endforeach
+
+        <img src="{{asset(BlogImage().$bannerimage->banner_image)}}" alt="">
+
 
     </div>
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-            @foreach ($logo as $item)
-            <a class="navbar-brand " href="index.html">{{$item->logo_name}}</a>
-            @endforeach
+
+            <a class="navbar-brand " href="index.html">{{$logo->logo_name}}</a>
+
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
@@ -134,11 +134,10 @@
         <h2 class="">
           Featured Products
         </h2>
-        @foreach ($featured as $featureditem)
         <p class="col-lg-8 px-0">
-            {{$featureditem->featured_discription}}
+            {{$featured->featured_discription}}
         </p>
-        @endforeach
+
 
       </div>
       <div class="product_container">
@@ -179,30 +178,29 @@
 
   <section class="about_section ">
     <div class="container-fluid">
-        @foreach ($about as $aboutitem)
         <div class="row">
             <div class="col-md-6 px-0">
               <div class="img-box ">
-                <img src="{{asset(BlogImage().$aboutitem->about_image)}}" class="box_img" alt="about img">
+                <img src="{{asset(BlogImage().$about->about_image)}}" class="box_img" alt="about img">
               </div>
             </div>
             <div class="col-md-5">
               <div class="detail-box ">
                 <div class="heading_container">
                   <h2 class="">
-                    {{$aboutitem->about_name}}
+                    {{$about->about_name}}
                   </h2>
                 </div>
                 <p class="detail_p_mt">
-                    {{$aboutitem->about_description}}
+                    {{$about->about_description}}
                 </p>
-                <a href="{{$aboutitem->about_readmore}}" class="">
+                <a href="{{$about->about_readmore}}" class="">
                   Read More
                 </a>
               </div>
             </div>
           </div>
-        @endforeach
+
 
     </div>
   </section>
@@ -217,11 +215,9 @@
         <h2 class="">
          All Products
         </h2>
-        @foreach ($apdescription as $apdescriptionitem)
         <p class="col-lg-8 px-0">
-            {{$apdescriptionitem->apdescription}}
+            {{$apdescription->apdescription}}
           </p>
-        @endforeach
 
       </div>
       <div class="row">
@@ -318,78 +314,23 @@
       <div class="client_container">
         <div class="carousel-wrap">
           <div class="owl-carousel client_owl-carousel">
-            <div class="item">
-              <div class="box">
-                <div class="img-box">
-                  <img src="{{asset('frontend/images/c1.jpg')}}" alt="" class="img-1">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    John Doe
-                  </h5>
-                  <h6>
-                    Magna
-                  </h6>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box">
-                <div class="img-box">
-                  <img src="{{asset('frontend/images/c2.jpg')}}" alt="" class="img-1">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Alan Jonas
-                  </h5>
-                  <h6>
-                    Magna
-                  </h6>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  </p>
+              @foreach ($clientreview as $clientreviewitem)
+              <div class="item">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{{asset(BlogImage().$clientreviewitem->client_image)}}" alt="" class="img-1">
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      {{$clientreviewitem->client_name}}
+                    </h5>
+                    <p>
+                        {{$clientreviewitem->client_review}}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="item">
-              <div class="box">
-                <div class="img-box">
-                  <img src="{{asset('frontend/images/c1.jpg')}}" alt="" class="img-1">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    John Doe
-                  </h5>
-                  <h6>
-                    Magna
-                  </h6>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="box">
-                <div class="img-box">
-                  <img src="{{asset('frontend/images/c2.jpg')}}" alt="" class="img-1">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Alan Jonas
-                  </h5>
-                  <h6>
-                    Magna
-                  </h6>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  </p>
-                </div>
-              </div>
-            </div>
+              @endforeach
           </div>
         </div>
       </div>
@@ -403,24 +344,24 @@
     <div class="container">
       <div class="footer_content ">
         <div class="row ">
-          <div class="col-md-6 col-lg-6 footer-col">
+          <div class="col-md-6 col-lg-12 footer-col">
             <div class="footer_detail">
-              <a href="index.html">
+              <a href=" {{$footerleft->footer_link}}">
                 <h4>
                   Brolta
                 </h4>
               </a>
               <p>
-                Exercitationem nisi voluptates mollitia suscipit voluptate minus facere, temporibus placeat ratione porro! Laboriosam esse ab cupiditate qui vel blanditiis, molestias, eaque natus aspernatur ipsam quasi id eos sapiente ducimus non!
+               {{$footerleft->footer_description}}
               </p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3 ">
+          <div class="col-md-6 col-lg-12 ">
             <h4>
               Contact us
             </h4>
             <div class="contact_nav footer-col">
-              <a href="">
+              <a href="{{$contactus->contactus_location}}">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
@@ -429,18 +370,18 @@
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call : +01 123455678990
+                  Call : {{$contactus->contactus_phonenumber}}
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  Email : demo@gmail.com
+                  Email : {{$contactus->contactus_email}}
                 </span>
               </a>
             </div>
           </div>
-          <div class="col-lg-3">
+          {{-- <div class="col-lg-3">
             <div class="footer_form footer-col">
               <h4>
                 NEWSLETTER
@@ -452,7 +393,7 @@
                 </button>
               </form>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
@@ -464,18 +405,11 @@
             <a href="https://html.design/">Free Html Templates</a>
           </p>
           <div class="social_box">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
+              @foreach ($socialmedia as $socialmediaitem)
+              <a href="{{$socialmediaitem->socialmedia_link}}">
+                <i class="{{$socialmediaitem->socialmedia_icon}}" aria-hidden="true"></i>
+              </a>
+              @endforeach
           </div>
         </div>
       </div>

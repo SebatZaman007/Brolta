@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientreviewsTable extends Migration
+class CreateFooterleftsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateClientreviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('clientreviews', function (Blueprint $table) {
+        Schema::create('footerlefts', function (Blueprint $table) {
             $table->id();
-            $table->string('client_image');
-            $table->string('client_name');
-            $table->text('client_review');
+            $table->string('footer_link')->nullable();
+            $table->text('footer_description');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateClientreviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientreviews');
+        Schema::dropIfExists('footerlefts');
     }
 }

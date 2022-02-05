@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Client Table
+                <h5 class="card-header">Banner Table
                     <div style="text-align: right">
-                        <a class="btn btn-primary" href="{{route('client.create')}}" role="button">Add new</a>
+                        <a class="btn btn-primary" href="{{route('contactus.create')}}" role="button">Add new</a>
                     </div>
                 </h5>
 
@@ -30,9 +30,9 @@
                         <table class="dataTableHover table table-striped table-bordered first">
                             <thead>
                             <tr>
-                                <th>{{ __('client_image')}}</th>
-                                <th>{{ __('client_name')}}</th>
-                                <th>{{ __('client_review')}}</th>
+                                <th>{{ __('contactus_location')}}</th>
+                                <th>{{ __('contactus_phonenumber')}}</th>
+                                <th>{{ __('contactus_email')}}</th>
                                 <th>{{ __('action')}}</th>
                             </tr>
                             </thead>
@@ -98,21 +98,22 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('client.index')}}",
+                url: "{{ route('contactus.index')}}",
             },
             columns: [
                 {
-                    data: 'client_image',
-                    name: 'client_image'
+                    data: 'contactus_location',
+                    name: 'contactus_location'
                 },
                 {
-                    data: 'client_name',
-                    name: 'client_name'
+                    data: 'contactus_phonenumber',
+                    name: 'contactus_phonenumber'
                 },
                 {
-                    data: 'client_review',
-                    name: 'client_review'
+                    data: 'contactus_email',
+                    name: 'contactus_email'
                 },
+
                 {
                     data: 'action',
                     name: 'action',

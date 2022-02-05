@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Client Table
+                <h5 class="card-header">Name Table
                     <div style="text-align: right">
-                        <a class="btn btn-primary" href="{{route('client.create')}}" role="button">Add new</a>
+                        <a class="btn btn-primary" href="{{route('footerleft.create')}}" role="button">Add new</a>
                     </div>
                 </h5>
 
@@ -30,9 +30,9 @@
                         <table class="dataTableHover table table-striped table-bordered first">
                             <thead>
                             <tr>
-                                <th>{{ __('client_image')}}</th>
-                                <th>{{ __('client_name')}}</th>
-                                <th>{{ __('client_review')}}</th>
+                                <th>{{ __('footer_link')}}</th>
+                                <th>{{ __('footer_description')}}</th>
+
                                 <th>{{ __('action')}}</th>
                             </tr>
                             </thead>
@@ -98,20 +98,16 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('client.index')}}",
+                url: "{{ route('footerleft.index')}}",
             },
             columns: [
                 {
-                    data: 'client_image',
-                    name: 'client_image'
+                    data: 'footer_link',
+                    name: 'footer_link'
                 },
                 {
-                    data: 'client_name',
-                    name: 'client_name'
-                },
-                {
-                    data: 'client_review',
-                    name: 'client_review'
+                    data: 'footer_description',
+                    name: 'footer_description'
                 },
                 {
                     data: 'action',

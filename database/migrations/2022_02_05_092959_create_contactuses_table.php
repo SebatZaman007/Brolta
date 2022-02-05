@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientreviewsTable extends Migration
+class CreateContactusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateClientreviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('clientreviews', function (Blueprint $table) {
+        Schema::create('contactuses', function (Blueprint $table) {
             $table->id();
-            $table->string('client_image');
-            $table->string('client_name');
-            $table->text('client_review');
+            $table->string('contactus_location');
+            $table->string('contactus_phonenumber');
+            $table->string('contactus_email');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateClientreviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientreviews');
+        Schema::dropIfExists('contactuses');
     }
 }

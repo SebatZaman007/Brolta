@@ -16,8 +16,10 @@
               @csrf
               <div class="card-body">
                   <div class="mb-3">
+                      <input type="hidden" name="id" value="{{$edit->id}}">
                       <label for="formFileMultiple" class="form-label">Client Image</label>
-                      <input class="form-control" type="text" name="client_image" value="{{$edit->client_image}}" id="formFileMultiple" multiple>
+                      <input class="form-control" type="file" name="client_image"  id="formFileMultiple" multiple>
+                      <img src="{{asset(BlogImage().$edit->client_image)}}" width="70px" height="70px" alt="img">
                     </div>
               </div>
               <div class="card-body">

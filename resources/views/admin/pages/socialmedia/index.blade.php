@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Client Table
+                <h5 class="card-header">Product Table
                     <div style="text-align: right">
-                        <a class="btn btn-primary" href="{{route('client.create')}}" role="button">Add new</a>
+                        <a class="btn btn-primary" href="{{route('socialmedia.create')}}" role="button">Add new</a>
                     </div>
                 </h5>
 
@@ -30,9 +30,9 @@
                         <table class="dataTableHover table table-striped table-bordered first">
                             <thead>
                             <tr>
-                                <th>{{ __('client_image')}}</th>
-                                <th>{{ __('client_name')}}</th>
-                                <th>{{ __('client_review')}}</th>
+
+                                <th>{{ __('socialmedia_icon')}}</th>
+                                <th>{{ __('socialmedia_link')}}</th>
                                 <th>{{ __('action')}}</th>
                             </tr>
                             </thead>
@@ -98,20 +98,16 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('client.index')}}",
+                url: "{{ route('socialmedia.index')}}",
             },
             columns: [
                 {
-                    data: 'client_image',
-                    name: 'client_image'
+                    data: 'socialmedia_icon',
+                    name: 'socialmedia_icon'
                 },
                 {
-                    data: 'client_name',
-                    name: 'client_name'
-                },
-                {
-                    data: 'client_review',
-                    name: 'client_review'
+                    data: 'socialmedia_link',
+                    name: 'socialmedia_link'
                 },
                 {
                     data: 'action',

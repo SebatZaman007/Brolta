@@ -58,7 +58,7 @@ class BannerimageController extends Controller
 
     public function bannerimageUpdate(Request $request){
         $id=$request->id;
-        if (!empty($request->logo_image)) {
+        if (!empty($request->banner_image)) {
             $banner_image = fileUpload($request['banner_image'], BlogImage());
         } else {
             $var=Bannerimage::where('id',$id)->first();

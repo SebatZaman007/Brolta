@@ -17,7 +17,7 @@
               <div class="card-body">
                   <div class="mb-3">
                       <label for="formFileMultiple" class="form-label">Client Image</label>
-                      <input class="form-control" type="text" name="client_image" id="formFileMultiple" multiple>
+                      <input class="form-control" type="file" name="client_image" id="formFileMultiple" multiple>
                     </div>
               </div>
               <div class="card-body">

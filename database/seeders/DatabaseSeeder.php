@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\Admin\SocialmediaController;
+use App\Models\Socialmedia;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,5 +25,11 @@ class DatabaseSeeder extends Seeder
         $this->call(ApdescriptionTableSeeder::class);
         $this->call(AllproductTableSeeder::class);
         $this->call(ContactTableSeeder::class);
+        $this->call(ClientTableSeeder::class);
+        $this->call(FooterleftTableSeeder::class);
+        $this->call(ContactusTableSeeder::class);
+        $this->call(SocialmediaTableSeeder::class);
+
+
     }
 }
